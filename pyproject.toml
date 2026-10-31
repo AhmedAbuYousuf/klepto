@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "klepto-local-downloader"
+version = "0.1.0"
+description = "Local-first Windows download manager V1"
+requires-python = ">=3.12"
+dependencies = [
+  "PySide6>=6.7,<7",
+  "httpx>=0.27,<1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.gui-scripts]
+klepto-downloader = "klepto_dl.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
